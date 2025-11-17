@@ -37,7 +37,7 @@ O aplicativo exibe horários, valores e tipos de assento disponíveis, permitind
 ## 🏗️ Arquitetura do Projeto
 
 ### Frontend
-- **React Native** com Expo SDK 52
+- **React Native** com Expo SDK 54
 - **TypeScript** para type safety
 - **Expo Router** para navegação
 - **Axios** para consumo de API
@@ -47,7 +47,7 @@ O aplicativo exibe horários, valores e tipos de assento disponíveis, permitind
 
 ### Dependências Principais
 - React Native 0.76.5
-- Expo ~52.0.0
+- Expo ~54.0.0
 - React Navigation 7.x
 - Expo Vector Icons
 - React Native Reanimated
