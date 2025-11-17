@@ -1,0 +1,41 @@
+export const cores = {
+  light: {
+    background: '#F9FAFB',
+    backgroundCard: '#FFFFFF',
+    text: '#1F2937',
+    textSecondary: '#6B7280',
+    textTertiary: '#9CA3AF',
+    border: '#E5E7EB',
+    primary: '#1E40AF',
+    primaryLight: '#EFF6FF',
+    success: '#10B981',
+    successLight: '#F0FDF4',
+    warning: '#F59E0B',
+    warningLight: '#FEF3C7',
+    error: '#EF4444',
+    errorLight: '#FEE2E2',
+    header: '#FFFFFF',
+    shadow: '#000000',
+  },
+  dark: {
+    background: '#111827',
+    backgroundCard: '#1F2937',
+    text: '#F9FAFB',
+    textSecondary: '#D1D5DB',
+    textTertiary: '#9CA3AF',
+    border: '#374151',
+    primary: '#3B82F6',
+    primaryLight: '#1E3A8A',
+    success: '#10B981',
+    successLight: '#064E3B',
+    warning: '#F59E0B',
+    warningLight: '#78350F',
+    error: '#EF4444',
+    errorLight: '#7F1D1D',
+    header: '#1F2937',
+    shadow: '#000000',
+  },
+};
+
+export type CoresType = typeof cores.light;
+

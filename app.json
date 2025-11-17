@@ -1,0 +1,72 @@
+{
+  "expo": {
+    "name": "Passagem Ônibus",
+    "slug": "passagem-onibus",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "passagem-onibus",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.passagemonibus.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "O app precisa de acesso à localização para selecionar origem e destino no mapa."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#1E40AF",
+        "foregroundImage": "./assets/images/android-icon-foreground.png"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "androidNavigationBar": {
+        "visible": "immersive",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.passagemonibus.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "CAMERA"
+      ]
+    },
+    "web": {
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#1E40AF",
+          "dark": {
+            "backgroundColor": "#0F172A"
+          }
+        }
+      ],
+      "expo-font",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "O app precisa de acesso à localização para selecionar origem e destino no mapa."
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "O app precisa de acesso à câmera para escanear QR Codes."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

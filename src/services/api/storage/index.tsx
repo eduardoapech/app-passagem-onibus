@@ -1,0 +1,41 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LoginResponse } from '@/src/interfaces/auth';
+import { Usuario } from '@/src/interfaces/usuario';
+
+export const AuthService = {
+  async login(response: LoginResponse): Promise<void> {
+    try {
+      await AsyncStorage.setItem('@user_token', response.token);
+      await AsyncStorage.setItem('@refresh_token', response.refreshToken);
+      await AsyncStorage.setItem('@user_data', JSON.stringify(response.usuario));
+    } catch (error) {
+      console.error('Erro ao salvar login:', error);
+    }
+  },
+
+  async getToken(): Promise<string | null> {
+    return await AsyncStorage.getItem('@user_token');
+  },
+
+  async getRefreshToken(): Promise<string | null> {
+    return await AsyncStorage.getItem('@refresh_token');
+  },
+
+  async getUser(): Promise<Usuario | null> {
+    const userJson = await AsyncStorage.getItem('@user_data');
+    return userJson ? JSON.parse(userJson) : null;
+  },
+
+  async isLoggedIn(): Promise<boolean> {
+    const token = await this.getToken();
+    return !!token;
+  },
+
+  async logout(): Promise<void> {
+    try {
+      await AsyncStorage.multiRemove(['@user_token', '@refresh_token', '@user_data']);
+    } catch (error) {
+      console.error('Erro ao fazer logout:', error);
+    }
+  }
+};
